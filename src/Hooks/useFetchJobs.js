@@ -27,19 +27,6 @@ export const useFetchJobs = (params, page) => {
 
     const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true },);
 
-    // useEffect(() => {
-    //     const getData = async() => {
-    //         try {
-    //             dispatch({ type: ACTIONS.MAKE_REQ })
-    //             const data = await axios.get(BASE_URL, {
-    //                 dispatch({ type: ACTIONS.GET_DATA, payload: { jobs:} })
-    //             })
-    //         } catch(err) {
-    //             dispatch({ type: ACTIONS.ERROR, payload: { error: err }})
-    //         }
-    //     }
-    // }, [params, page])
-
     useEffect(() => {
         const cancelToken = axios.CancelToken.source();
         dispatch({ type: ACTIONS.MAKE_REQ })
